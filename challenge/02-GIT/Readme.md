@@ -12,7 +12,7 @@ Una de las tareas de un DevOps es diseñar y desarrollar pipelines de CI/CD.
 
 - Git juega un papel clave en CI/CD. Desde mi experiencia trabajando en diferentes empresas, puedo decir que no hay un único estándar para la ramificación de git y flujos de trabajo. A veces, usted necesita sentarse con los desarrolladores y discutir el enfoque correcto para la ramificación de git en el pipeline de CI/CD. Esto incluye el etiquetado git, versión de lanzamiento, etc.
 
-- De hecho, en la mayoría de las organizaciones, los ingenieros de DevOps poseen y operan los repositorios git. 
+- De hecho, en la mayoría de las organizaciones, los DevOps poseen y operan los repositorios git. 
 
 - Por lo tanto, para tener una discusión significativa con los equipos de desarrollo, debe tener un buen conocimiento de Git.
 
@@ -32,7 +32,7 @@ Con prácticas técnicas como GitOps, git actúa como fuente de verdad para toda
 
 Con Gitops, cualquier cambio en las configuraciones del repo de git se despliega en la infraestructura.
 
-Así que es una necesidad para los ingenieros de DevOps saber todo sobre git.
+Así que es una necesidad para los de DevOps saber todo sobre git.
 
  
 Info adicional [link](https://devopslatam.com/como-aprender-git-para-devops-hoja-de-ruta-de-git-para-principiantes/)
