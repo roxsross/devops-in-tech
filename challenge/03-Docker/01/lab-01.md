@@ -30,5 +30,5 @@ Pueden Realizar la entrega en equipo o individual, recuerden usar solo un reposi
 
 ### Tips
 
-![](assets/1.png)
-![](assets/2.png)
+![](../assets/1.png)
+![](../assets/2.png)

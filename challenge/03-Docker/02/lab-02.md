@@ -23,4 +23,4 @@ Pueden Realizar la entrega en equipo o individual, recuerden usar solo un reposi
 
 ### Tips
 
-![](assets/4.png)
+![](../assets/4.png)

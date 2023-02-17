@@ -16,4 +16,4 @@ Pueden Realizar la entrega en equipo o individual, recuerden usar solo un reposi
 
 ### Tips
 
-![](assets/5.png)
+![](../assets/5.png)
