@@ -12,15 +12,16 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 4000, host: 1257
   config.vm.network "forwarded_port", guest: 9999, host: 1258
   config.vm.network "forwarded_port", guest: 9090, host: 1259
+  config.vm.network "forwarded_port", guest: 9000, host: 1251
   config.vm.network "forwarded_port", guest: 3306, host: 1260 #mysql
   config.vm.network "forwarded_port", guest: 27017, host: 1261 #mongo
-  config.vm.hostname = "roxs"
+  config.vm.hostname = "roxs" #cambiar nombre
   config.vm.synced_folder ".", "/vagrant", disabled: false
   config.vm.disk :disk, size: "50GB", primary: true
   config.vm.provider "virtualbox" do |vb|
      vb.memory = "2048"
      vb.cpus = "2"
-     vb.name = "roxs"
+     vb.name = "roxs"#nombre
   end
 
   config.vm.provision "shell", inline: <<-SHELL
