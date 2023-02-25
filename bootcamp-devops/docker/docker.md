@@ -261,3 +261,61 @@ Tagear la imagen
 
 `docker push docker-registry-username/docker-image-name`
 
+
+
+
+
+docker volume create web_vol
+docker volume ls
+
+docker volume inspect web_vol
+
+ruta estaticos /usr/share/nginx/html
+
+docker run -d --name nginx_web -v web_vol:/usr/share/nginx/html -p 8080:80 nginx:alpine
+
+
+docker run -d --name nginx_web -v /home/vagrant/web:/usr/share/nginx/html:ro -p 8080:80 nginx:alpine
+RW=lectura y escritura
+RO
+nginx:alpine
+
+network
+
+docker network create red1
+
+docker run -d --name nginx_web --network red1 -p 8080:80 nginx:alpine
+
+
+docker run -d --name guestbook --network guest_net  -p 8081:5000 roxsross12/guestbook:latest
+
+docker network create guest_net 
+
+docker run -d --name some-redis  redis redis-server -p 6379:6379 #### ERROR
+
+docker run -d --name redis --network guest_net -v /opt/redis:/data -p 6379:6379 redis redis-server
+
+desplegando wordpress + mysql
+wordpress
+mysql:8.0
+
+docker network create wp_net
+docker volume create wp_vol
+
+### bd
+
+MYSQL_ROOT_PASSWORD=secret
+MYSQL_DATABASE=bd_wp
+MYSQL_USER=user_wp
+MYSQL_PASSWORD=pass_wp
+
+docker run -d --name servidor_mysql --network wp_net -v wp_vol:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=bd_wp -e MYSQL_USER=user_wp -e MYSQL_PASSWORD=pass_wp -p 3306:3306 mysql:8.0
+
+wordpress
+
+-e WORDPRESS_DB_HOST=servidor_mysql
+-e WORDPRESS_DB_USER=user_wp
+-e WORDPRESS_DB_PASSWORD=pass_wp
+-e WORDPRESS_DB_NAME=bd_wp
+
+docker run -d --name servidor_wp --network wp_net -v /opt/wordpress:/var/www/html/wp-content -e WORDPRESS_DB_HOST=servidor_mysql -e WORDPRESS_DB_USER=user_wp -e WORDPRESS_DB_PASSWORD=pass_wp -e WORDPRESS_DB_NAME=bd_wp -p 8080:80 wordpress
