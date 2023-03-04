@@ -1,0 +1,24 @@
+{
+  "name": "training-ecs-aws-girl",
+  "version": "1.0.0",
+  "description": "AWS ECS&ECR Level 100",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"MOCK: running tests \" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roxsross/training-ecs-aws-girl.git"
+  },
+  "author": "Rossana Suarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roxsross/training-ecs-aws-girl/issues"
+  },
+  "homepage": "https://github.com/roxsross/training-ecs-aws-girl#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
+  }
+}

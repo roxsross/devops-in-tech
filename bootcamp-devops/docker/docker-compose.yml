@@ -1,7 +1,46 @@
 version: '3'
 services:
-  web:
-    container_name: nginx_1
+  frontend:
+    container_name: nginx_web
+    image: nginx:alpine
     ports:
-      - "8080:80"
-    image: nginx
+      - 8080:80
+    environment:
+      - PRUEBA=1234
+    depends_on:
+      - mysql
+      - backend
+    networks:
+      - net_nginx
+  backend:
+    container_name: backend
+    image: nginx:alpine
+    ports:
+      - 8081:80
+    environment:
+      - PRUEBA=1234
+    depends_on:
+      - mysql    
+    networks:
+      - net_nginx
+    volumes:
+      - "vol_nginx:/usr/share/nginx/html"      
+  mysql:
+    container_name: bd
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      - "MYSQL_ROOT_PASSWORD=password"   
+    networks:
+      - net_nginx
+    volumes:
+      - "vol_mysql:/var/lib/mysql"    
+
+networks:
+  net_nginx:
+    driver: bridge
+
+volumes:
+  vol_nginx:
+  vol_mysql:
